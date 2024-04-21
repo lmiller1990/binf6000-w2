@@ -210,7 +210,20 @@ class Alignment():
                 p = D / L
                 # Now calculate the specified measure based on p
                 if measure == 'fractional':
-                    dist = p
+                    # dist = p
+                    dist = D / L
+                elif measure == 'poisson':
+                    # This is how you calculate poisson distance. Negative log of 1 - p dist
+                    dist = -numpy.log(1 - p)
+                elif measure == "gamma":
+                    # assume a = 1 for alpha
+                    # can be 0.2 to 3.5 according to textbook
+                    # todo: make it a parameter?
+                    # todo: why can't I use math.gamma(p)? 
+                    # It gives drastically different numbers.
+                    # I guess math.gamma is not a gamma DISTANCE but just the result of gamma function?
+                    a = 1
+                    dist = a * (((1 - p) ** (-1 / a)) - 1)
                 else:
                     raise RuntimeError('Not implemented: %s' % measure)
                 distmat[i, j] = distmat[j, i] = dist

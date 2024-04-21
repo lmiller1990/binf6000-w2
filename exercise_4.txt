@@ -1,0 +1,2 @@
+sp|A4TM73|MNMC_YERPP | percent: 1.0
+sp|A9R7V8|MNMC_YERPG | percent: 1.0
