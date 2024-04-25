@@ -20,30 +20,36 @@ def exercise_4(my_sequence_number, seqs, sub_matrix):
     find two putative (assumed to be related) homologous (proteins sharing common ancestory)
     """
 
+    # a bunch of temp vars to track the closest matches
     best1 = 0
     idx1 = 0
     best2 = 0
     idx2 = 0
     total = len(seqs)
 
-    for idx in range(len(seqs)):  # iterate over all sequences
+    for idx in range(total):
+        # Progress UI
         print(f"Running for {idx} / {total}")
+        # do not match against itself - not a putative homolog
         if idx != my_sequence_number:
             seq = seqs[idx]
+            # align my sequence and the current one and score
             aln = align(seqs[my_sequence_number], seq, sub_matrix, -7)
             percent = scoreAlignment(aln) / aln.alignlen
 
+            # if it is the best, save it.
+            # this means the current best is demoted the second best
             if best1 < percent:
                 best2 = best1
                 idx2 = idx1
                 best1 = percent
                 idx1 = idx
 
+            # new second best, replace existing one
             elif best2 < percent:
                 best2 = percent
                 idx2 = idx
 
-    # return [{"percent": best1, "index": idx1}, {"percent": best2, "index": idx2}]
     print(f"Best match index is is {idx1}. Sequence is:\n\n{seqs[idx1]}")
     print(f"\n\nSecond best match index is is {idx2}. Sequence is:\n\n{seqs[idx2]}")
     with open("exercise_4.txt", "w") as f:
@@ -71,9 +77,12 @@ def getConsensusForColumn(aln, colidx) -> str:
 def exercise_5(aln: Alignment) -> Sequence:
     cols = len(aln[0])
     con_seq = ""
+    # loop each col and grab the next char
     for i in range(cols):
         char = getConsensusForColumn(aln, i)
+        # append it
         con_seq += char
+    # return a Sequence instance
     return Sequence(con_seq, Protein_Alphabet, name='Consensus Sequence', gappy=True)
 
 """
@@ -88,8 +97,8 @@ sp|A9R7V8|MNMC_YERPG | percent: 1.0
 
 aln = readClustalFile('dao.aln', Protein_Alphabet)
 print('Loaded %d sequences into the alignment, which is %d columns wide' % (len(aln), aln.alignlen))
-# seq = exercise_5(aln)
-# print(f"Consensus Sequence for Exercise 5 is:\n\n{seq}")
+seq = exercise_5(aln)
+print(f"Consensus Sequence for Exercise 5 is:\n\n{seq}")
 # print(seq)
 
 # print(len(aln[0]))
@@ -110,15 +119,19 @@ for seq in aln.seqs:
 selected = Alignment(selected_seqs)
 
 
-fractional = selected.calcDistances('fractional')
-poisson = selected.calcDistances('poisson')
-gamma = selected.calcDistances('gamma')
-fig, ax = plt.subplots()
+def exercise_6():
+    fractional = selected.calcDistances('fractional')
+    poisson = selected.calcDistances('poisson')
+    gamma = selected.calcDistances('gamma')
+    fig, ax = plt.subplots()
 
-print(fractional)
-print(poisson)
-print(gamma)
-# ax.imshow(poisson, plt.cm.gray, interpolation='nearest')
-# plt.yticks(np.arange(len(selected)), [s.name for s in selected])
-# plt.title('Distances')
-# plt.show()
+    print(fractional)
+    print(poisson)
+    print(gamma)
+    ax.imshow(poisson, plt.cm.gray, interpolation='nearest')
+    plt.yticks(np.arange(len(selected)), [s.name for s in selected])
+    plt.title('Distances')
+    plt.show()
+
+
+# exercise_6()

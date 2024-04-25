@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{calcDistances}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{measure} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}fractional\PYGZsq{}}\PYG{p}{,} \PYG{n}{a}\PYG{o}{=}\PYG{l+m+mf}{1.0}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} omitted for brevity \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} Now calculate the specified measure based on p}
+    \PYG{n}{p} \PYG{o}{=} \PYG{n}{D} \PYG{o}{/} \PYG{n}{L}
+    \PYG{k}{if} \PYG{n}{measure} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}fractional\PYGZsq{}}\PYG{p}{:}
+        \PYG{n}{dist} \PYG{o}{=} \PYG{n}{D} \PYG{o}{/} \PYG{n}{L}
+    \PYG{k}{elif} \PYG{n}{measure} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}poisson\PYGZsq{}}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} This is how you calculate poisson distance. Negative log of 1 \PYGZhy{} p dist}
+        \PYG{n}{dist} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{numpy}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{p}\PYG{p}{)}
+    \PYG{k}{elif} \PYG{n}{measure} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}gamma\PYGZdq{}}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} assume a = 1 for alpha}
+        \PYG{c+c1}{\PYGZsh{} can be 0.2 to 3.5 according to textbook}
+        \PYG{c+c1}{\PYGZsh{} todo: make it a parameter?}
+        \PYG{c+c1}{\PYGZsh{} todo: why can\PYGZsq{}t I use math.gamma(p)?}
+        \PYG{c+c1}{\PYGZsh{} It gives drastically different numbers.}
+        \PYG{c+c1}{\PYGZsh{} I guess math.gamma is not a gamma DISTANCE but just the result of gamma function?}
+        \PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{1}
+        \PYG{n}{dist} \PYG{o}{=} \PYG{n}{a} \PYG{o}{*} \PYG{p}{(((}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{p}\PYG{p}{)} \PYG{o}{**} \PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1} \PYG{o}{/} \PYG{n}{a}\PYG{p}{))} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{k}{raise} \PYG{n+ne}{RuntimeError}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Not implemented: }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{\PYGZpc{}} \PYG{n}{measure}\PYG{p}{)}
+\end{Verbatim}

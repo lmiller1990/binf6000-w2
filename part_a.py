@@ -120,6 +120,6 @@ def exercise_3():
 # Execute all the exercises!
 # exercise_1("TMM25_HUMAN")
 
-# exercise_2()
+exercise_2()
 
-exercise_3()
+# exercise_1()

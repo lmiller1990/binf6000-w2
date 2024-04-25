@@ -127,6 +127,7 @@ class Sequence():
     def count(self, findme):
         """ Get the number of occurrences of specified symbol """
         cnt = 0
+        print(self.sequence)
         for sym in self.sequence:
             if findme == sym:
                 cnt = cnt + 1
