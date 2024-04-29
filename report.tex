@@ -414,7 +414,7 @@ The residues I identified earlier are:
     \item 290-291: VG
     \item 326: S
     \item 437: E
-\begin{end}
+\end{itemize}
 
 I added a (\verb+strSites+) function, and hacked into (\verb+_printSequences+) to get this working. I commented the interesting part.
 
@@ -449,6 +449,23 @@ def _printSequences(self, cols):
             return left + ','
         elif self.left and self.right:
             return '(' + left + ',' + right + ')' + dist
+
+""" Usage """
+residues = [
+    173,
+    230, 231, 232, 233,
+    290, 291, 
+    326,
+    437
+]
+
+aln = guide.readClustalFile('exercise7.aln', guide.Protein_wGAP)
+tree = guide.runUPGMA(aln, 'poisson')
+tree.putAlignment(aln)
+tree.parsimony()
+s = tree.strSites(residues)
+print(s)
+
 \end{minted}
 
 Here is how the tree looks:

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.11)  29 APR 2024 13:51
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.11)  29 APR 2024 13:53
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -378,33 +378,31 @@ File: tree2.png Graphic file (type bmp)
 
 (./_minted-report/E0DA22018D4D9AD0AE99FA26F6D7A98223CF86EF6392372B69DB28AB6578D
 4A6.pygtex [10])
-Runaway argument?
-! Paragraph ended before \end  was complete.
-<to be read again> 
-                   \par 
-l.418 
-      
-? ls
-Type <return> to proceed, S to scroll future error messages,
-R to run without stopping, Q to run quietly,
-I to insert something, E to edit your file,
-1 or ... or 9 to ignore the next 1 to 9 tokens of input,
-H for help, X to quit.
-? 
-! Emergency stop.
-<to be read again> 
-                   \par 
-l.418 
-      
-End of file on the terminal!
+\openout3 = `report.pyg'.
 
- 
+runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P s
+tripnl=False -o _minted-report/BC2043E310BA2468B30715351DD5EF4223CF86EF6392372B
+69DB28AB6578D4A6.pygtex report.pyg)...executed.
+
+
+(./_minted-report/BC2043E310BA2468B30715351DD5EF4223CF86EF6392372B69DB28AB6578D
+4A6.pygtex [11])
+File: q12.png Graphic file (type bmp)
+<q12.png>
+runsystem(rm _minted-report/BF41AF095C58F08207F63A572318AB5623CF86EF6392372B69D
+B28AB6578D4A6.pygtex)...executed.
+
+ [12] (./report.aux)
+runsystem(rm report.pyg)...executed.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5746 strings out of 476179
- 113492 string characters out of 5809544
- 465649 words of memory out of 5000000
- 26386 multiletter control sequences out of 15000+600000
+ 5776 strings out of 476179
+ 114550 string characters out of 5809544
+ 467918 words of memory out of 5000000
+ 26406 multiletter control sequences out of 15000+600000
  489500 words of font info for 42 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  75i,5n,81p,1494b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
-Output written on report.pdf (10 pages).
+
+Output written on report.pdf (12 pages).
