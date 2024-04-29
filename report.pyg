@@ -1,0 +1,25 @@
+def exercise_11():
+  """ Annotate tree with metabolized sugars """
+  df = pd.read_csv("Files_WS2/sugars.csv")
+  yeasts = list(df["Yeast"])
+  aln = guide.readClustalFile('exercise7.aln', guide.Protein_Alphabet)
+  phy = guide.runUPGMA(aln, 'poisson')
+  df = df.set_index(df['Yeast'])
+
+  for col_name in df.columns[1:]:
+    phy_copy = str(phy)
+    t = 0
+    f = 0
+    for yeast in yeasts:
+      can_metabolize = df[col_name][yeast]
+      # add the labels using string replacement
+      phy_copy = phy_copy.replace(yeast, f"{yeast} {can_metabolize}")
+      # debugging - can see how many sugars can be metabolized
+      if can_metabolize:
+        t += 1
+      else:
+        f += 1
+
+    # Prints: <Melizitose> => 8 / 14 = 57.14285714285714
+    # Useful for debugging
+    print(f"{col_name} => {t} / {f + t} = {(t / (t + f)) * 100}")

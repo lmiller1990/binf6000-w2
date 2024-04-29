@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{voordeckers} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{173}\PYG{p}{,} \PYG{l+m+mi}{231}\PYG{p}{,} \PYG{l+m+mi}{232}\PYG{p}{,} \PYG{l+m+mi}{233}\PYG{p}{,} \PYG{l+m+mi}{234}\PYG{p}{,} \PYG{l+m+mi}{294}\PYG{p}{,} \PYG{l+m+mi}{295}\PYG{p}{,} \PYG{l+m+mi}{324}\PYG{p}{,} \PYG{l+m+mi}{437}\PYG{p}{]}
+
+\PYG{k}{def} \PYG{n+nf}{exercise\PYGZus{}9}\PYG{p}{():}
+\PYG{+w}{  }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{  This code print: YVGSLMQDE. This aligns with the figure 4 in the paper.}
+\PYG{l+s+sd}{  \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+  \PYG{n}{seq} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}MVSMPN ... omitted for brevity ... NESA\PYGZhy{}\PYGZhy{}\PYGZdq{}}
+  \PYG{k}{for} \PYG{n}{a} \PYG{o+ow}{in} \PYG{n}{voordeckers}\PYG{p}{:}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{seq}\PYG{p}{[}\PYG{n}{a}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{end}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

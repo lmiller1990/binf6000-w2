@@ -907,6 +907,9 @@ class PhyloTree:
         """ Produce a printable representation of the tree, specifically the root of the tree. """
         return str(self.root)
 
+    def strSites(self, cols):
+        return self.root._printSequences(cols)
+
     def strSequences(self, start=None, end=None):
         """ Produce a sequence representation of the tree, specifically the root of the tree.
             Specify the start and end positions in the alignment for the sequence to be printed
@@ -1025,17 +1028,18 @@ class PhyloNode:
             elif self.left and self.right:
                 return '(' + left + ',' + right + ')' + dist
 
-    def _printSequences(self, start, end):
+    def _printSequences(self, cols):
         """ Returns string with node (incl descendants) in a Newick style. """
         left = right = label = dist = ''
         if self.left:
-            left = self.left._printSequences(start, end)
+            left = self.left._printSequences(cols)
         if self.right:
-            right = self.right._printSequences(start, end)
+            right = self.right._printSequences(cols)
         if self.dist:
             dist = ':' + str(self.dist)
         if self.sequence != None:
-            label = "".join(self.sequence[start:end]) + ""
+            # -1 for python starting at index=0
+            label = "".join(self.sequence[i-1] for i in cols) + ""
             if not self.left and not self.right:
                 return label + dist
             else:

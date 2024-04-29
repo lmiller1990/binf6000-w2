@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.11)  29 APR 2024 09:01
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.11)  29 APR 2024 13:51
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -340,9 +340,25 @@ File: poisson.png Graphic file (type bmp)
 
 (./_minted-report/B7BE07F3E294C43AAB0F52D20B2A16A323CF86EF6392372B69DB28AB6578D
 4A6.pygtex [6]) [7]
-File: residues.png Graphic file (type bmp)
-<residues.png>
- [8]
+\openout3 = `report.pyg'.
+
+
+(./_minted-report/DF13BC547B8346348532646F4B3EAB2D23CF86EF6392372B69DB28AB6578D
+4A6.pygtex) [8]
+File: ima1.png Graphic file (type bmp)
+<ima1.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--341
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+
+ []
+
+File: mine.png Graphic file (type bmp)
+<mine.png>
 \openout3 = `report.pyg'.
 
 
@@ -351,7 +367,7 @@ File: residues.png Graphic file (type bmp)
 File: tree.png Graphic file (type bmp)
 <tree.png>
  [9]
-Overfull \hbox (32.68979pt too wide) in paragraph at lines 334--334
+Overfull \hbox (32.68979pt too wide) in paragraph at lines 368--368
 []\T1/lmr/bx/n/14.4 Exercise 11: An-no-tate your tree with metabolised
  []
 
@@ -361,17 +377,34 @@ File: tree2.png Graphic file (type bmp)
 
 
 (./_minted-report/E0DA22018D4D9AD0AE99FA26F6D7A98223CF86EF6392372B69DB28AB6578D
-4A6.pygtex [10]) [11] (./report.aux)
-runsystem(rm report.pyg)...executed.
+4A6.pygtex [10])
+Runaway argument?
+! Paragraph ended before \end  was complete.
+<to be read again> 
+                   \par 
+l.418 
+      
+? ls
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+! Emergency stop.
+<to be read again> 
+                   \par 
+l.418 
+      
+End of file on the terminal!
 
- ) 
+ 
 Here is how much of TeX's memory you used:
- 5742 strings out of 476179
- 113094 string characters out of 5809544
- 466319 words of memory out of 5000000
- 26382 multiletter control sequences out of 15000+600000
- 489135 words of font info for 41 fonts, out of 8000000 for 9000
+ 5746 strings out of 476179
+ 113492 string characters out of 5809544
+ 465649 words of memory out of 5000000
+ 26386 multiletter control sequences out of 15000+600000
+ 489500 words of font info for 42 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 75i,6n,81p,1494b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on report.pdf (11 pages).
+ 75i,5n,81p,1494b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
+Output written on report.pdf (10 pages).

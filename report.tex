@@ -307,15 +307,49 @@ I put my fasta file into the ClustaW web interface, and this is the consensus se
 
 \section{Exercise 9: Locate the MalS active site in the alignment}
 
-Here is my approach:
+I grabbed the sequence from the Voordeckers et al. alignment. It is for S cerevisiae S288c IMA1. Here it is:
 
-\begin{enumerate}
-    \item Find the sequence for the Ima1 protein in the dataset in Voordeckers et al. (2012)
-    \item Look at the locations identified in the paper (see below image)
-    \item Programmatically slice and inspect my alignment and find the (mostly) matching sequence
-\end{enumerate}
+\seqsplit{MTISSA---HPETEPKWWKEATFYQIYPASF----------KDSNDDG-WGDMKGIASKLEYIKELGADAIWISPFYDSPQDDMGYDIANYEKVWPTYGTNEDCFALIEKTHKLGMKFITDLVINHCSSEHEWFKESRSSKTNPKRDWFFWRPPKGYDAE-GKPIPPNNWKSYFGGSAWTFDEKTQEFYLRLFCSTQPDLNWENEDCRKAIYESAVGYWLDHGVDGFRIDVGSLYSKVVGLPDAPVVDKNSTWQSSDPYTLNGPRIHEFHQEMNQFIRNRVK-DGREIMTVGEMQHASD-ETKRLYTSASRHELSELFNFSHTDVGTSPLFRYNLVPFELKDWKIALAELFRYI------NGTDCWSTIYLENHDQPRSITRFGDD-SPK-NRVISGKLLSVLLSALTGTLYVYQGQELGQINF-KNWPVEKYEDVEIRNNYNAIKEEHGEN---SEEMKKFLEAIALISRDHARTPMQWS---REEPNAGFSG---PSAKPWFYLNDSFREGINVEDEIKDPNSVLNFWKEALKFRKAHKDITVYGYDFEFI-DLDNKKLFSFTKKYNN----KTLFAALNFSSDATDFKIPNDDSSFKLEFGNYPKKEVDASSRTLKPWEGRIYISE----}
 
-\includegraphics[width=0.8\textwidth]{residues.png}
+I wrote some code to verify the conserved residues match the figure in the paper.
+
+\begin{minted}[linenos=false,fontsize=\small]{python}
+voordeckers = [173, 231, 232, 233, 234, 294, 295, 324, 437]
+
+def exercise_9():
+  """
+  This code print: YVGSLMQDE. This aligns with the figure 4 in the paper.
+  """
+  seq = "MVSMPN ... omitted for brevity ... NESA--"
+  for a in voordeckers:
+    print(seq[a-1], end="")
+\end{minted}
+
+Should be "YVGSLMQDE" as per figure 4 in the paper. This looks correct for the isomaltose-like group.
+
+\begin{itemize}
+    \item 173: Y
+    \item 231-234: VGSL
+    \item 294-295: MQ
+    \item 324: D
+    \item 437: E
+\end{itemize}
+
+\includegraphics[width=0.8\textwidth]{ima1.png}
+
+\par Looking at mine, I found positions: \\
+
+\begin{itemize}
+    \item 173: F
+    \item 230-234: VGSL
+    \item 290-291: VG
+    \item 326: S
+    \item 437: E
+\end{itemize}
+
+FVGSLVGSE matches the other isomaltose-like group: \\
+
+\includegraphics[width=0.8\textwidth]{mine.png}
 
 \section{Exercise 10: Infer the phylogenetic relationships among select MalS proteins}
 
@@ -327,14 +361,13 @@ def exercise_10():
   return phy
 \end{minted}
 
-\includegraphics[width=0.8\textwidth]{tree.png}
+Here's the tree:
 
-TODO: I don't really understand what to do next.
+\includegraphics[width=0.8\textwidth]{tree.png}
 
 \section{Exercise 11: Annotate your tree with metabolised sugars}
 
 Here is my code. I loop each sugar, then for each one, loop each yeast and update the labels with string replacement.
-
 
 I found Melizitose can metabolize => 8 / 14 sugars. I visualized it.
 
@@ -374,6 +407,52 @@ def exercise_11():
 
 \section{Exercise 12: Identify the active sites at inferred ancestral sequences}
 
-I don't really understand what to do here!
+The residues I identified earlier are:
+\begin{itemize}
+    \item 173: F
+    \item 230-234: VGSL
+    \item 290-291: VG
+    \item 326: S
+    \item 437: E
+\begin{end}
+
+I added a (\verb+strSites+) function, and hacked into (\verb+_printSequences+) to get this working. I commented the interesting part.
+
+\begin{minted}[linenos=false,fontsize=\small]{python}
+def strSites(self, cols):
+    return self.root._printSequences(cols)
+
+def _printSequences(self, cols):
+    """ Returns string with node (incl descendants) in a Newick style. """
+    left = right = label = dist = ''
+    if self.left:
+        left = self.left._printSequences(cols)
+    if self.right:
+        right = self.right._printSequences(cols)
+    if self.dist:
+        dist = ':' + str(self.dist)
+    if self.sequence != None:
+        """
+        THIS IS THE IMPORTANT PART
+        USE A LIST COMPREHENSION TO MODIFY THE LABEL!
+        Note: need to -1 because python starts at index=0
+        """
+        label = "".join(self.sequence[i-1] for i in cols) + ""
+        if not self.left and not self.right:
+            return label + dist
+        else:
+            return '(' + left + ',' + right + ')' + label + dist
+    else:  # there is no label
+        if not self.left and self.right:
+            return ',' + right
+        elif self.left and not self.right:
+            return left + ','
+        elif self.left and self.right:
+            return '(' + left + ',' + right + ')' + dist
+\end{minted}
+
+Here is how the tree looks:
+
+\includegraphics[width=0.8\textwidth]{q12.png}
 
 \end{document}
