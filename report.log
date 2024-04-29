@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.11)  29 APR 2024 13:53
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.11)  29 APR 2024 21:29
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -300,7 +300,7 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 \openout3 = `report.pyg'.
 
 
-(./_minted-report/0DA2ACEBA69D339EEB032836DB5138B423CF86EF6392372B69DB28AB6578D
+(./_minted-report/5619353C4A3E997A029C36377DBE838F23CF86EF6392372B69DB28AB6578D
 4A6.pygtex
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2.
@@ -310,10 +310,10 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
 \openout3 = `report.pyg'.
 
 
-(./_minted-report/41ADE64EDC5DAF74AA885CDADC0E5D2923CF86EF6392372B69DB28AB6578D
+(./_minted-report/D3A0C106A10D514434AF4AA12BB86A7E23CF86EF6392372B69DB28AB6578D
 4A6.pygtex
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-3.
+6.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -326,83 +326,78 @@ File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 \openout3 = `report.pyg'.
 
 
-(./_minted-report/C614AD40265E7178B86258C80AB01AAE23CF86EF6392372B69DB28AB6578D
-4A6.pygtex) [5]
+(./_minted-report/2A66B7AED70EB9299BB1335B413EF4FD23CF86EF6392372B69DB28AB6578D
+4A6.pygtex [5])
 \openout3 = `report.pyg'.
 
 
-(./_minted-report/676A4B94617B1C20213DBE130223F62323CF86EF6392372B69DB28AB6578D
-4A6.pygtex)
+(./_minted-report/8823806B32855C284B281EF6B680FA1723CF86EF6392372B69DB28AB6578D
+4A6.pygtex [6])
 File: poisson.png Graphic file (type bmp)
 <poisson.png>
 \openout3 = `report.pyg'.
 
 
-(./_minted-report/B7BE07F3E294C43AAB0F52D20B2A16A323CF86EF6392372B69DB28AB6578D
-4A6.pygtex [6]) [7]
+(./_minted-report/5F1F6B33D18664029A901D9B7194186B23CF86EF6392372B69DB28AB6578D
+4A6.pygtex [7]) [8]
 \openout3 = `report.pyg'.
 
 
-(./_minted-report/DF13BC547B8346348532646F4B3EAB2D23CF86EF6392372B69DB28AB6578D
-4A6.pygtex) [8]
-File: ima1.png Graphic file (type bmp)
-<ima1.png>
-
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
-
- []
-
+(./_minted-report/6DCABF7ACDBF8AD0C6A9729DAD0F29A623CF86EF6392372B69DB28AB6578D
+4A6.pygtex)
 File: mine.png Graphic file (type bmp)
 <mine.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
+
+ []
+
+[9]
+File: ima1.png Graphic file (type bmp)
+<ima1.png>
 \openout3 = `report.pyg'.
 
 
-(./_minted-report/7E53FD001B6EA22B2D2AC39381FA1BA023CF86EF6392372B69DB28AB6578D
+(./_minted-report/B4B2D8DBCBBB966B9E76D52E1C8299A923CF86EF6392372B69DB28AB6578D
 4A6.pygtex)
 File: tree.png Graphic file (type bmp)
 <tree.png>
- [9]
-Overfull \hbox (32.68979pt too wide) in paragraph at lines 368--368
+
+Overfull \hbox (32.68979pt too wide) in paragraph at lines 387--387
 []\T1/lmr/bx/n/14.4 Exercise 11: An-no-tate your tree with metabolised
  []
 
 File: tree2.png Graphic file (type bmp)
 <tree2.png>
+[10]
 \openout3 = `report.pyg'.
 
 
-(./_minted-report/E0DA22018D4D9AD0AE99FA26F6D7A98223CF86EF6392372B69DB28AB6578D
-4A6.pygtex [10])
+(./_minted-report/0E77BD5A4F9B7E2D9CC199C0D1ECA42F23CF86EF6392372B69DB28AB6578D
+4A6.pygtex) [11]
 \openout3 = `report.pyg'.
 
-runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -P s
-tripnl=False -o _minted-report/BC2043E310BA2468B30715351DD5EF4223CF86EF6392372B
-69DB28AB6578D4A6.pygtex report.pyg)...executed.
 
-
-(./_minted-report/BC2043E310BA2468B30715351DD5EF4223CF86EF6392372B69DB28AB6578D
-4A6.pygtex [11])
+(./_minted-report/408A5BE4EC1696E1C4CB4C9FF939EA5A23CF86EF6392372B69DB28AB6578D
+4A6.pygtex [12])
 File: q12.png Graphic file (type bmp)
 <q12.png>
-runsystem(rm _minted-report/BF41AF095C58F08207F63A572318AB5623CF86EF6392372B69D
-B28AB6578D4A6.pygtex)...executed.
-
- [12] (./report.aux)
+ [13] (./report.aux)
 runsystem(rm report.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 5776 strings out of 476179
- 114550 string characters out of 5809544
- 467918 words of memory out of 5000000
- 26406 multiletter control sequences out of 15000+600000
+ 5773 strings out of 476179
+ 114302 string characters out of 5809544
+ 470838 words of memory out of 5000000
+ 26404 multiletter control sequences out of 15000+600000
  489500 words of font info for 42 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 75i,5n,81p,1494b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,81p,1494b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on report.pdf (12 pages).
+Output written on report.pdf (13 pages).
