@@ -1,6 +1,9 @@
 include
+run.py
 _minted-report
 bin
 lib
 __pycache__
 Files_WS2/
+report.aux
+report.log
