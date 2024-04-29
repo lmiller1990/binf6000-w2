@@ -57,7 +57,7 @@ def exercise_4(my_sequence_number, seqs, sub_matrix):
         f.write("\n")
         f.write(f"{seqs[idx2].name} | percent: {best2}")
 
-def getConsensusForColumn(aln, colidx) -> str:
+def getConsensusForColumn(aln, colidx):
     symcnt = {}
     for seq in aln.seqs:
         mysym = seq[colidx]
@@ -74,7 +74,8 @@ def getConsensusForColumn(aln, colidx) -> str:
     return consensus
 
 
-def exercise_5(aln: Alignment) -> Sequence:
+def exercise_5(aln):
+    # get length of the sequence
     cols = len(aln[0])
     con_seq = ""
     # loop each col and grab the next char

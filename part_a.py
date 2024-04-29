@@ -1,15 +1,13 @@
 from guide import *
 
-
 def readfile(path):
     with open(path, "r") as file:
         return file.readlines()
 
 
-def exercise_1(query_seq: str):
+def exercise_1(query_seq):
     def process(txt):
         """make it a bit cleaner"""
-        # return [[s.strip() for s in line.split(" ") if s] for line in txt]
         data = []
         for line in txt:
             data.append([s.strip() for s in line.split(" ") if s])
@@ -20,7 +18,7 @@ def exercise_1(query_seq: str):
             if line[0] == "ID":
                 return line[1]
 
-    def get_aa_seq(lines: list[list[str]], signal_start: int, signal_end: int):
+    def get_aa_seq(lines, signal_start, signal_end):
         aa_start = 0
         aa_end = 0
         for lineno, line in enumerate(lines):
@@ -60,13 +58,10 @@ def exercise_1(query_seq: str):
 def exercise_2():
     # list of `Sequence` class with useful information and methods about a given sequence
     seqs = []
-
     # list of ids representing an organism that contains DAO and has been reviewed
     names = searchSequences("family:DAO AND reviewed:true")
-
     #  count of occurrences of E. Coli DOA protein
     cnt = 0
-
     # get each sequence data from uniprot
     for name in names:
         seq = getSequence(name)
@@ -83,10 +78,8 @@ def exercise_2():
             # ensure end of sequence is found in data
             if end_index == -1:
                 end_index = len(seq.annot)
-
             # python slicing to get annotation data
             species = seq.annot[start_index + 3 : end_index]
-
             # print name of seq
             print(seq.name, "\t", species)
 
@@ -118,7 +111,7 @@ def exercise_3():
 
 
 # Execute all the exercises!
-# exercise_1("TMM25_HUMAN")
+exercise_1("TMM25_HUMAN")
 
 exercise_2()
 
