@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.11)  29 APR 2024 21:29
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.11)  29 APR 2024 21:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -333,8 +333,8 @@ File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 (./_minted-report/8823806B32855C284B281EF6B680FA1723CF86EF6392372B69DB28AB6578D
 4A6.pygtex [6])
-File: poisson.png Graphic file (type bmp)
-<poisson.png>
+File: images/poisson.png Graphic file (type bmp)
+<images/poisson.png>
 \openout3 = `report.pyg'.
 
 
@@ -345,8 +345,8 @@ File: poisson.png Graphic file (type bmp)
 
 (./_minted-report/6DCABF7ACDBF8AD0C6A9729DAD0F29A623CF86EF6392372B69DB28AB6578D
 4A6.pygtex)
-File: mine.png Graphic file (type bmp)
-<mine.png>
+File: images/mine.png Graphic file (type bmp)
+<images/mine.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
@@ -358,22 +358,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 369--370
  []
 
 [9]
-File: ima1.png Graphic file (type bmp)
-<ima1.png>
+File: images/ima1.png Graphic file (type bmp)
+<images/ima1.png>
 \openout3 = `report.pyg'.
 
 
 (./_minted-report/B4B2D8DBCBBB966B9E76D52E1C8299A923CF86EF6392372B69DB28AB6578D
 4A6.pygtex)
-File: tree.png Graphic file (type bmp)
-<tree.png>
+File: images/tree.png Graphic file (type bmp)
+<images/tree.png>
 
 Overfull \hbox (32.68979pt too wide) in paragraph at lines 387--387
 []\T1/lmr/bx/n/14.4 Exercise 11: An-no-tate your tree with metabolised
  []
 
-File: tree2.png Graphic file (type bmp)
-<tree2.png>
+File: images/tree2.png Graphic file (type bmp)
+<images/tree2.png>
 [10]
 \openout3 = `report.pyg'.
 
@@ -385,16 +385,16 @@ File: tree2.png Graphic file (type bmp)
 
 (./_minted-report/408A5BE4EC1696E1C4CB4C9FF939EA5A23CF86EF6392372B69DB28AB6578D
 4A6.pygtex [12])
-File: q12.png Graphic file (type bmp)
-<q12.png>
+File: images/q12.png Graphic file (type bmp)
+<images/q12.png>
  [13] (./report.aux)
 runsystem(rm report.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 5773 strings out of 476179
- 114302 string characters out of 5809544
- 470838 words of memory out of 5000000
+ 5774 strings out of 476179
+ 114603 string characters out of 5809544
+ 470845 words of memory out of 5000000
  26404 multiletter control sequences out of 15000+600000
  489500 words of font info for 42 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
