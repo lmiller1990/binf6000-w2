@@ -1,7 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{def} \PYG{n+nf}{exercise\PYGZus{}10}\PYG{p}{():}
-  \PYG{n}{aln} \PYG{o}{=} \PYG{n}{guide}\PYG{o}{.}\PYG{n}{readClustalFile}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}exercise7.aln\PYGZsq{}}\PYG{p}{,} \PYG{n}{guide}\PYG{o}{.}\PYG{n}{Protein\PYGZus{}Alphabet}\PYG{p}{)}
-  \PYG{n}{phy} \PYG{o}{=} \PYG{n}{guide}\PYG{o}{.}\PYG{n}{runUPGMA}\PYG{p}{(}\PYG{n}{aln}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}poisson\PYGZsq{}}\PYG{p}{)}
-  \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{phy}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} print so we can copy into jstree}
-  \PYG{k}{return} \PYG{n}{phy}
-\end{Verbatim}
